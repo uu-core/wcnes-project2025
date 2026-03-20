@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from functools import cache
 import pandas as pd
-from numpy import NaN
+from numpy import nan
 from pylab import rcParams
 rcParams["figure.figsize"] = 16, 4
 import math
@@ -143,9 +143,11 @@ def compute_ber(df, PACKET_LEN=32):
         return 0.5
 
 # plot radar chart
-def radar_plot(metrics):
+def radar_plot(metrics, system_ref, title):
+
     categories = ['Time', 'Reliability', 'Distance']
-    system_ref = [62.321888, 0.201875*100, 39.956474923886844]
+    
+    # system_ref = [62.321888, 0.201875*100, 39.956474923886844]
     system = [metrics[0], metrics[1], metrics[2]]
 
     label_loc = np.linspace(start=0.5 * np.pi, stop=11/6 * np.pi, num=len(categories))
@@ -158,8 +160,10 @@ def radar_plot(metrics):
 
     plt.plot(np.append(label_loc, (0.5 * np.pi)), system+[system[0]], label='Our system', color='#77A136')
     plt.fill(label_loc, system, color='#77A136', alpha=0.25)
-    plt.title('System Performance', size=20)
+
+    plt.title(title, size=20)
 
     lines, labels = plt.thetagrids(np.degrees(label_loc), labels=categories, fontsize=18)
     plt.legend(fontsize=18, loc='upper right')
+    
     plt.show()

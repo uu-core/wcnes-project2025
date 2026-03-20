@@ -2,6 +2,10 @@
 An educational project on backscatter using Raspberry Pi Pico
 
 ## --> Updates <--
+- 19.03.2026: Updated the radar plot function to take a title and reference system parameters. Added requirement.txt 
+
+
+## --> Updates <--
 - 14.05.2024: Updated analysis script, seperating bit error rate from packet error rate.
 - 08.05.2023: Comment about the baud-rate: Notice that the baud-rate of the CC1352 is specified from 20-1000 kBaud (we tested it working as low as 30 kBaud with the backscatter setup). The CC2500 would allow for lower baud-rate configurations (specified down-to 1.2 kBaud). The timing of the state-machine is precise (no significant error or clock-difference needs to be considered).
 - 27.04.2023: The Python script (generating the PIO) generated state machines which did not compile due to a mistake by splitting the required delay over a number of instructions. The issue has been resolved. The C-implementation was not affected by this issue.
