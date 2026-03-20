@@ -2,7 +2,7 @@
 An educational project on backscatter using Raspberry Pi Pico
 
 ## --> Updates <--
-- 19.03.2026: Updated the radar plot function to take a title and reference system parameters. Added requirement.txt 
+- 19.03.2026: Updated the radar plot function to take a title and reference system parameters. Added requirement.txt and baseline stats files.
 
 
 ## --> Updates <--
